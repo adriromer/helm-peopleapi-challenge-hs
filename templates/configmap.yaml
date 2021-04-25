@@ -4,7 +4,7 @@ data:
   DB_HOSTNAME: peopleapi-challenge-hs-db.default.svc.cluster.local
   DB_PASSWORD: dbpass
   DB_PORT: "3306"
-  DB_USER: "dbuser"
+  DB_USER: dbuser
   LISTEN_HOST: 0.0.0.0
   LISTEN_PORT: "8080"
 kind: ConfigMap
