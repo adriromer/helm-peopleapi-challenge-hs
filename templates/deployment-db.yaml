@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peopleapi-challenge-hs-db
+spec:
+  selector:
+    matchLabels:
+      app: peopleapi-challenge-hs-db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: peopleapi-challenge-hs-db
+    spec:
+      containers:
+      - image: adriromer/peopleapi-challenge-hs-db:latest
+        name: peopleapi-challenge-hs-db
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: dbpass
+        ports:
+        - containerPort: 3306
+          name: mysql
